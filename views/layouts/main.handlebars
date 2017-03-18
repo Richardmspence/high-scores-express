@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+		<title>Game</title>
+	</head>
+	<body>
+			<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="#">Portfolio</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">Home</a></li>
+	        <li><a href="#">About</a></li>
+	        <li><a href="#">Gallery</a></li>
+	        <li><a href="#">Contact</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+		<div class="container">
+	  <div class="jumbotron">
+	    <h1>Hangman</h1>      
+	    <p>The theme of this Hangman game is US Presidents.</p>
+	  </div>   
+		</div>
+
+		{{#if logged_in}}
+			<a href="/users/sign-out" id="sign-out">Sign Out ({{this.username}})</a> | <a href="/scores">RPS</a> | <a href="/scores/hangman">Hangman</a> | <a href="/scores/quiz">Quiz</a>
+
+			<p class="clear"><strong>logged_in:</strong> {{logged_in}} |
+			<strong>user_email:</strong> {{user_email}} |
+			<strong>user_id:</strong> {{user_id}} |
+			<strong>username:</strong> {{username}}</p>
+		{{else}}
+			<a href="/users/sign-in">Sign In</a>
+			<a href="/users/new">Register</a>
+		{{/if}}
+
+		{{{ body }}}
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<script src="/assets/js/ajax.js"></script>
+		<script src="/assets/js/hangman.js"></script>
+		<script src="/assets/js/quiz.js"></script>
+	</body>
+
+</html>
